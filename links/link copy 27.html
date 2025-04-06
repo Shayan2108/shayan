@@ -43,7 +43,7 @@
     pdfjsLib.getDocument(url).promise.then(pdf => {
       // Carica la pagina desiderata
       pdf.getPage(pageNumber).then(page => {
-        const scale = 1.5; // Modifica questo valore per ingrandire/ridurre il PDF
+        const scale = 1; // Modifica questo valore per ingrandire/ridurre il PDF
         const viewport = page.getViewport({ scale: scale });
 
         const canvas = document.getElementById('pdf-canvas');

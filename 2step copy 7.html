@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,20 +6,39 @@
     <title>step number 2</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stile.css">
 </head>
 <body>
     <header><h1>madani qafile ka din</h1></header>
     <main class="day-board">
+        <a href="index.html" class="day-back">&#8592; Back to months</a>
         <aside class="day-hero" aria-hidden="true">
             <div class="day-ring"><span class="day-count">3</span></div>
             <p class="day-caption">days of the week</p>
         </aside>
         <nav class="day-panel" aria-label="Select day">
-            <a href="agosto-venerdì.html" class="day-row"><span class="day-badge">Fri</span><span class="day-label">Friday</span><span class="day-arrow" aria-hidden="true"></span></a>
-            <a href="agosto-sabato.html" class="day-row"><span class="day-badge">Sat</span><span class="day-label">Saturday</span><span class="day-arrow" aria-hidden="true"></span></a>
-            <a href="agosto-domenica.html" class="day-row"><span class="day-badge">Sun</span><span class="day-label">Sunday</span><span class="day-arrow" aria-hidden="true"></span></a>
+            <a href="agosto-venerdì.html" class="day-row day-row--fri">
+                <span class="day-badge">Fri</span>
+                <span class="day-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8v4"/><path d="M14 14c0-4 4.5-6 10-6s10 2 10 6"/><path d="M12 14h24v22H12z"/><path d="M18 36V22h4v14"/><path d="M26 36V22h4v14"/><path d="M8 36h32"/></svg></span>
+                <span class="day-label">Friday</span>
+                <span class="day-urdu">&#1580;&#1605;&#1593;&#1729;</span>
+                <span class="day-arrow" aria-hidden="true"></span>
+            </a>
+            <a href="agosto-sabato.html" class="day-row day-row--sat">
+                <span class="day-badge">Sat</span>
+                <span class="day-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10h12a6 6 0 016 6v26H14a4 4 0 01-4-4V10z"/><path d="M26 10h8a4 4 0 014 4v28"/><path d="M18 18h8"/><path d="M18 24h8"/><path d="M18 30h6"/></svg></span>
+                <span class="day-label">Saturday</span>
+                <span class="day-urdu">&#1729;&#1601;&#1578;&#1729;</span>
+                <span class="day-arrow" aria-hidden="true"></span>
+            </a>
+            <a href="agosto-domenica.html" class="day-row day-row--sun">
+                <span class="day-badge">Sun</span>
+                <span class="day-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="24" cy="24" r="8"/><path d="M24 6v4M24 38v4M6 24h4M38 24h4M11 11l3 3M34 34l3 3M11 37l3-3M34 14l3-3"/></svg></span>
+                <span class="day-label">Sunday</span>
+                <span class="day-urdu">&#1575;&#1578;&#1608;&#1575;&#1585;</span>
+                <span class="day-arrow" aria-hidden="true"></span>
+            </a>
         </nav>
     </main>
 </body>

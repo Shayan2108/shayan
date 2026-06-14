@@ -454,6 +454,59 @@ a {
     text-align: center;
 }
 
+.day-urdu {
+    font-family: "Noto Nastaliq Urdu", serif;
+    line-height: 1.4;
+    color: var(--text-primary);
+}
+
+.day-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.9);
+    flex-shrink: 0;
+}
+
+.day-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.day-back {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--green-deep);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    transition:
+        transform 0.35s var(--ease-spring),
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+    flex-shrink: 0;
+}
+
+.day-back:hover,
+.day-back:focus-visible {
+    transform: translateX(-4px);
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 6px 20px var(--green-shadow);
+}
+
+.day-back:focus-visible {
+    outline: 3px solid var(--green-light);
+    outline-offset: 2px;
+}
+
 .day-panel .day-row:nth-child(1) { animation: rowIn 0.5s var(--ease-out) 0.15s both; }
 .day-panel .day-row:nth-child(2) { animation: rowIn 0.5s var(--ease-out) 0.25s both; }
 .day-panel .day-row:nth-child(3) { animation: rowIn 0.5s var(--ease-out) 0.35s both; }
@@ -514,14 +567,44 @@ a {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         text-align: center;
-        gap: 1rem;
-        min-height: clamp(200px, 32vh, 320px);
-        padding: 1.75rem 1.25rem;
-        background: rgba(255, 255, 255, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.24);
-        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
+        gap: 0.65rem;
+        min-height: clamp(220px, 34vh, 360px);
+        padding: 1.5rem 1.25rem 1.35rem;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .day-panel .day-row--fri {
+        background: linear-gradient(160deg, rgba(45, 122, 36, 0.95) 0%, rgba(58, 146, 47, 0.88) 100%);
+    }
+
+    .day-panel .day-row--sat {
+        background: linear-gradient(160deg, rgba(58, 146, 47, 0.92) 0%, rgba(83, 165, 72, 0.88) 100%);
+    }
+
+    .day-panel .day-row--sun {
+        background: linear-gradient(160deg, rgba(83, 165, 72, 0.9) 0%, rgba(110, 203, 62, 0.85) 100%);
+    }
+
+    .day-panel .day-row::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.07;
+        background-image:
+            radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.5) 0%, transparent 45%),
+            url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M20 18v-2h-2v2h-2v2h2v2h2v-2h2v-2h-2zm0-16V0h-2v2h-2v2h2v2h2V4h2V2h-2zM4 18v-2H2v2H0v2h2v2h2v-2h2v-2H4z'/%3E%3C/g%3E%3C/svg%3E");
+        z-index: 0;
+    }
+
+    .day-panel .day-row > * {
+        position: relative;
+        z-index: 1;
     }
 
     .day-panel .day-row::before {
@@ -550,21 +633,58 @@ a {
         transform: translateY(-2px) scale(0.99);
     }
 
+    .day-panel .day-row--fri:hover,
+    .day-panel .day-row--fri:focus-visible {
+        box-shadow: 0 14px 36px rgba(45, 122, 36, 0.45), 0 0 0 2px rgba(58, 146, 47, 0.35);
+    }
+
+    .day-panel .day-row--sat:hover,
+    .day-panel .day-row--sat:focus-visible {
+        box-shadow: 0 14px 36px rgba(58, 146, 47, 0.4), 0 0 0 2px rgba(83, 165, 72, 0.35);
+    }
+
+    .day-panel .day-row--sun:hover,
+    .day-panel .day-row--sun:focus-visible {
+        box-shadow: 0 14px 36px rgba(110, 203, 62, 0.4), 0 0 0 2px rgba(110, 203, 62, 0.35);
+    }
+
     .day-panel .day-badge {
         width: 4.25rem;
         height: 4.25rem;
         font-size: 1rem;
         font-weight: 700;
+        background: rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .day-panel .day-icon {
+        width: clamp(2.75rem, 5vw, 3.5rem);
+        height: clamp(2.75rem, 5vw, 3.5rem);
+        opacity: 0.9;
     }
 
     .day-panel .day-label {
         font-size: clamp(1.25rem, 2.5vw, 1.65rem);
         line-height: 1.2;
+        color: #fff;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .day-panel .day-urdu {
+        font-size: clamp(1.3rem, 2.2vw, 1.85rem);
+        color: rgba(255, 255, 255, 0.95);
+        margin-top: -0.15rem;
     }
 
     .day-panel .day-arrow {
         margin-top: auto;
-        opacity: 0.55;
+        opacity: 0.7;
+        color: #fff;
+    }
+
+    .day-panel .day-row:hover .day-label,
+    .day-panel .day-row:focus-visible .day-label {
+        color: #fff;
     }
 }
 
@@ -681,6 +801,15 @@ a {
     .day-panel .day-label {
         font-size: 1.75rem;
     }
+
+    .day-panel .day-icon {
+        width: 3.75rem;
+        height: 3.75rem;
+    }
+
+    .day-panel .day-urdu {
+        font-size: 2rem;
+    }
 }
 
 @media (min-width: 1280px) {
@@ -728,6 +857,14 @@ a {
             max(0.85rem, env(safe-area-inset-left));
     }
 
+    .day-back {
+        align-self: stretch;
+        justify-content: center;
+        width: 100%;
+        font-size: 0.78rem;
+        padding: 0.5rem 0.9rem;
+    }
+
     .day-hero {
         width: 100%;
         flex-shrink: 0;
@@ -753,26 +890,64 @@ a {
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: clamp(0.75rem, 4vw, 1.25rem);
-        padding: 1rem 1.25rem;
+        gap: clamp(0.5rem, 3vw, 1rem);
+        padding: 1rem 1.1rem;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .day-panel .day-row--fri {
+        background: linear-gradient(135deg, rgba(45, 122, 36, 0.82) 0%, rgba(58, 146, 47, 0.72) 100%);
+    }
+
+    .day-panel .day-row--sat {
+        background: linear-gradient(135deg, rgba(58, 146, 47, 0.8) 0%, rgba(83, 165, 72, 0.72) 100%);
+    }
+
+    .day-panel .day-row--sun {
+        background: linear-gradient(135deg, rgba(83, 165, 72, 0.78) 0%, rgba(110, 203, 62, 0.7) 100%);
+    }
+
+    .day-panel .day-row::after {
+        display: none;
+    }
+
+    .day-panel .day-icon {
+        display: none;
     }
 
     .day-panel .day-badge {
-        width: clamp(3rem, 12vw, 3.5rem);
-        height: clamp(3rem, 12vw, 3.5rem);
-        font-size: 0.7rem;
+        width: clamp(2.75rem, 11vw, 3.25rem);
+        height: clamp(2.75rem, 11vw, 3.25rem);
+        font-size: 0.65rem;
         flex-shrink: 0;
+        background: rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .day-panel .day-label {
         flex: 0 1 auto;
         text-align: center;
-        font-size: clamp(1.1rem, 5vw, 1.4rem);
+        font-size: clamp(1rem, 4.5vw, 1.25rem);
+        color: #fff;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    }
+
+    .day-panel .day-urdu {
+        flex: 0 1 auto;
+        font-size: clamp(0.85rem, 3.2vw, 1rem);
+        color: rgba(255, 255, 255, 0.92);
     }
 
     .day-panel .day-arrow {
         flex-shrink: 0;
-        opacity: 0.5;
+        opacity: 0.55;
+        color: #fff;
+    }
+
+    .day-panel .day-row:hover .day-label,
+    .day-panel .day-row:focus-visible .day-label {
+        color: #fff;
     }
 
     .day-panel .day-row:hover,

@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>step number 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stile.css">
 </head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="stile.css">
 <body>
     <header><h1>madani qafile ka din</h1></header>
-    <nav><section class="container ">
-        <a href="luglio-venerdì.html"><div><img src="pngwing.com.png" class="imgdiv"><strong>friday</strong></div></a>
-        <a href="luglio-sabato.html"><div><img src="pngwing.com.png" class="imgdiv"><strong>saturday</strong></div></a>
-         <a href="luglio-domenica.html"><div><img src="pngwing.com.png" class="imgdiv"><strong>sunday</strong></div></a>
-     </section></nav>
+    <main class="day-board">
+        <aside class="day-hero" aria-hidden="true">
+            <div class="day-ring"><span class="day-count">3</span></div>
+            <p class="day-caption">days of the week</p>
+        </aside>
+        <nav class="day-panel" aria-label="Select day">
+            <a href="luglio-venerdì.html" class="day-row"><span class="day-badge">Fri</span><span class="day-label">Friday</span><span class="day-arrow" aria-hidden="true"></span></a>
+            <a href="luglio-sabato.html" class="day-row"><span class="day-badge">Sat</span><span class="day-label">Saturday</span><span class="day-arrow" aria-hidden="true"></span></a>
+            <a href="luglio-domenica.html" class="day-row"><span class="day-badge">Sun</span><span class="day-label">Sunday</span><span class="day-arrow" aria-hidden="true"></span></a>
+        </nav>
+    </main>
 </body>
 </html>

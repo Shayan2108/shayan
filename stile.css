@@ -447,6 +447,11 @@ a {
 .day-panel .day-row {
     flex: 1;
     min-height: 4.5rem;
+    width: 100%;
+}
+
+.day-panel .day-label {
+    text-align: center;
 }
 
 .day-panel .day-row:nth-child(1) { animation: rowIn 0.5s var(--ease-out) 0.15s both; }
@@ -711,27 +716,95 @@ a {
     }
 }
 
-@media (max-width: 767px) {
-    .month-row,
-    .day-panel .day-row {
-        min-height: 52px;
-        padding: 0.75rem 0.95rem;
+@media (max-width: 639px) {
+    .day-board {
+        width: 100%;
+        flex: 1;
+        min-height: calc(100dvh - var(--header-height));
+        gap: 0.75rem;
+        padding:
+            0.75rem max(0.85rem, env(safe-area-inset-right))
+            max(1rem, env(safe-area-inset-bottom))
+            max(0.85rem, env(safe-area-inset-left));
     }
 
-    .day-board {
-        gap: 0.85rem;
+    .day-hero {
+        width: 100%;
+        flex-shrink: 0;
+    }
+
+    .day-panel {
+        flex: 1;
+        width: 100%;
+        min-height: 0;
+        gap: 0.6rem;
+        padding: 0;
+        background: none;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .day-panel .day-row {
+        flex: 1;
+        width: 100%;
+        min-height: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(0.75rem, 4vw, 1.25rem);
+        padding: 1rem 1.25rem;
+    }
+
+    .day-panel .day-badge {
+        width: clamp(3rem, 12vw, 3.5rem);
+        height: clamp(3rem, 12vw, 3.5rem);
+        font-size: 0.7rem;
+        flex-shrink: 0;
+    }
+
+    .day-panel .day-label {
+        flex: 0 1 auto;
+        text-align: center;
+        font-size: clamp(1.1rem, 5vw, 1.4rem);
+    }
+
+    .day-panel .day-arrow {
+        flex-shrink: 0;
+        opacity: 0.5;
+    }
+
+    .day-panel .day-row:hover,
+    .day-panel .day-row:focus-visible {
+        transform: scale(1.01);
+    }
+}
+
+@media (max-width: 767px) {
+    .month-row {
+        min-height: 52px;
+        padding: 0.75rem 0.95rem;
     }
 }
 
 @media (hover: none) and (pointer: coarse) {
-    .month-row,
-    .day-panel .day-row {
+    .month-row {
         min-height: 56px;
     }
 
-    .month-row:active,
+    .month-row:active {
+        background: var(--surface-row-hover);
+    }
+
     .day-panel .day-row:active {
         background: var(--surface-row-hover);
+    }
+
+    @media (max-width: 639px) {
+        .day-panel .day-row {
+            min-height: 0;
+        }
     }
 
     @media (min-width: 640px) {

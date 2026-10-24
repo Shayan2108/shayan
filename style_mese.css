@@ -339,14 +339,17 @@ button:focus-visible {
 
 /* ── Toggle text blocks ── */
 .testo2,
-.testo4 {
+.testo4,
+.testo6 {
     display: none;
 }
 
 .testo1,
 .testo2,
 .testo3,
-.testo4 {
+.testo4,
+.testo5,
+.testo6 {
     animation: textSwap 0.4s var(--ease-out);
 }
 

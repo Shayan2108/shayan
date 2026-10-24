@@ -30,8 +30,24 @@
                      <li>مختصر نیکی کی دعوت 10:56 تا 11:08
                          (12 منٹ)
                      ● </li>
+                     <li style="text-align: end;"><button class="button3">اٹالین  میں اعلان</button></li>
+
+                     <div class="testo5">
+
                      <li>ہم اللہ پاک کے گناہ گار بندے اور اُس کے آخری نبی، محمد عربی صلی اللہ علیہ والہ وسلم کے غلام ہیں، یقینا زندگی بے حد مختصر ہے ، ہم ہر وقت موت کے قریب ہوتے جارہے ہیں ہمیں جلد ہی اندھیری قبر میں اُتار دیا جائے گا ئجات اللہ پاک کا حکم ماننے اور رسول کریم صلی اللہ علیہ والہ وسلم کی سنتوں پر عمل کرنے میں ہے
+
                          </li>
+
+                     </div>
+
+                     <div class="testo6">
+
+                         <li>Noi siamo dei peccatori servi di Allah پاک e seguaci del Nobile Profeta صلى الله عليه وسلم.
+Non c'è dubbio che la vita è molto breve e ci avviciniamo alla morte in ogni momento.
+Presto saremo fatti scendere nella tomba oscura.
+La salvezza è nell'obbedire Allah پاک (il Puro) e nel praticare le Sunnah del Nobile Profeta صلى الله عليه وسلم.</li>
+
+                     </div>
                      <li>انفرادی کوشش کا طریقہ 11:08 تا 11:20
                          (12منٹ)
                         ● </li>
@@ -130,6 +146,27 @@
                     button2.innerHTML = 'اٹالین  میں اعلان';
                 }
                 contatore2++;
+        });
+    
+        let testo5 = document.getElementsByClassName('testo5')[0]
+        let testo6 = document.getElementsByClassName('testo6')[0]
+        let button3 = document.querySelector('.button3');
+        let contatore3 = 0;
+        button3.addEventListener('click',function(){
+            
+            if(contatore3 % 2 == 0)
+        {
+
+            testo5.style.display ="none";
+            testo6.style.display ="block";
+            button3.innerHTML = 'اردو  میں اعلان';
+        }
+                else{
+                    testo5.style.display ="block";
+                    testo6.style.display ="none";
+                    button3.innerHTML = 'اٹالین  میں اعلان';
+                }
+                contatore3++;
         });
     </script>
 </body>
